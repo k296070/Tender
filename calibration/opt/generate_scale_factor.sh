@@ -4,7 +4,7 @@ CHUNK_SIZE=256
 # OPT - Linear
 for nsamples in 128;do
   for seqlen in 2048;do
-    for size in 6.7b 13b 66b;do
+    for size in 6.7b 13b;do
       for bits in 4 8;do
         case ${size} in 
           6.7b)

@@ -5,7 +5,7 @@ CHUNK_SIZE=256
 # Llama-2 - Linear
 for nsamples in 128;do
   for seqlen in 2048;do
-    for size in 7b 13b 70b;do
+    for size in 7b 13b;do
       for bits in 4 8;do
         case ${size} in 
           7b)
