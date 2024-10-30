@@ -7,7 +7,7 @@ llama_2_dir = os.environ['LLAMA2_PATH']
 
 print('='*10 + ' OPT baseline ' + '='*10)
 set_symlink_opt('modeling_opt_orig.py')
-for SIZE in ['6.7b', '13b', '66b']:
+for SIZE in ['6.7b', '13b']:
     for SEQLEN in [2048]:
         for DATASET in ["wikitext2", 'ptb']:
             cmd = "CUDA_VISIBLE_DEVICES=0 python opt.py "
@@ -21,7 +21,7 @@ for SIZE in ['6.7b', '13b', '66b']:
 
 print('='*10 + ' OPT Tender-INT4 ' + '='*10)
 set_symlink_opt('modeling_opt_tender.py')
-for SIZE in ['6.7b', '13b', '66b']:
+for SIZE in ['6.7b', '13b']:
     for SEQLEN in [2048]:
         for DATASET in ["wikitext2", 'ptb']:
             for BITS in [4, 8]:
@@ -42,7 +42,7 @@ for SIZE in ['6.7b', '13b', '66b']:
 
 print('='*10 + ' Llama-2 baseline ' + '='*10)
 set_symlink_llama('modeling_llama_orig.py')
-for SIZE in ['7b', '13b', '70b']:
+for SIZE in ['7b', '13b']:
     for SEQLEN in [2048]:
         for DATASET in ["wikitext2", "ptb"]:
             cmd = "CUDA_VISIBLE_DEVICES=0 python llama.py "
@@ -56,7 +56,7 @@ for SIZE in ['7b', '13b', '70b']:
 
 print('='*10 + ' Llama-2 Tender-INT4 ' + '='*10)
 set_symlink_llama('modeling_llama_tender.py')
-for SIZE in ['7b', '13b', '70b']:
+for SIZE in ['7b', '13b']:
     for SEQLEN in [2048]:
         for DATASET in ["wikitext2", 'ptb']:
             for BITS in [4, 8]:
