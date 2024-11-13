@@ -36,6 +36,7 @@ def forward_by_layer(model, inputs, num_samples, seqlen):
             cache['i'] += 1
             cache['attention_mask'] = kwargs['attention_mask']
             cache['position_ids'] = kwargs['position_ids']
+            print(cache['i'],cache['position_ids'],cache['attention_mask'])
             raise ValueError
 
     layers[0] = Catcher(layers[0])
